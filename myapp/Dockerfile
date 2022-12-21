@@ -2,8 +2,9 @@
 FROM node:latest as node
 WORKDIR /app
 COPY ./ /app
+RUN cat package.json
 RUN npm install socket.io --save
-RUN ng build
+RUN npm run build
 #stage 2
 FROM nginx:alpine
 COPY --from=node /app/dist/myapp /usr/share/nginx/html
