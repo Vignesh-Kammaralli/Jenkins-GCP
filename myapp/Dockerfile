@@ -2,7 +2,7 @@
 FROM node:latest as node
 WORKDIR /app
 COPY ./ /app
-RUN cat package.json
+RUN ls
 RUN npm install socket.io --save
 RUN npm run build
 #stage 2
