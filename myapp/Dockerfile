@@ -1,7 +1,7 @@
 #stage 1
 FROM node:latest as node
 WORKDIR /app
-COPY . /app
+COPY . ./
 RUN npm cache clean --force
 RUN rm -rf node_modules
 RUN npm install
