@@ -1,9 +1,8 @@
 #stage 1
 FROM node:latest as node
 WORKDIR /app
-COPY ./ /app
-RUN ls
-RUN npm install socket.io --save
+COPY ./myapp /app
+RUN npm install 
 RUN npm run build
 #stage 2
 FROM nginx:alpine
